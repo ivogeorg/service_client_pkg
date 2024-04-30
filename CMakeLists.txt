@@ -104,7 +104,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES service_client_pkg
-#  CATKIN_DEPENDS roscpp trajectory_by_name_srv
+ CATKIN_DEPENDS roscpp trajectory_by_name_srv
 #  DEPENDS system_lib
 )
 
@@ -133,7 +133,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/service_client_pkg_node.cpp)
-add_executable(simple_service_pkg_node src/simple_service_client.cpp)
+add_executable(simple_service_client src/simple_service_client.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -144,13 +144,13 @@ add_executable(simple_service_pkg_node src/simple_service_client.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(simple_service_pkg_node ${simple_service_pkg_node_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(simple_service_client ${service_client_pkg_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-target_link_libraries(simple_service_pkg_node
+target_link_libraries(simple_service_client
   ${catkin_LIBRARIES}
 )
 

@@ -4,7 +4,8 @@
 
 int main(int argc, char **argv) {
   // Initialise a ROS node with the name service_client
-  ros::init(argc, argv, "service_client");
+  //   ros::init(argc, argv, "service_client");
+  ros::init(argc, argv, "simple_service_client");
   ros::NodeHandle nh;
 
   // Create the connection to the service /trajectory_by_name

@@ -3,7 +3,7 @@
 
   <node pkg ="service_client_pkg"
         type="simple_service_client"
-        name="service_client"
+        name="simple_service_client"
         output="screen">
   </node>
 
